@@ -9,6 +9,11 @@ Package license: MIT
 
 Summary: Parse US addresses using conditional random fields
 
+Development: https://github.com/datamade/usaddress
+
+usaddress is a Python library for parsing unstructured United States address strings
+into address components, using advanced NLP methods.
+
 Current build status
 ====================
 
@@ -143,4 +148,5 @@ Feedstock Maintainers
 =====================
 
 * [@wyseguy7](https://github.com/wyseguy7/)
+* [@zaneselvans](https://github.com/zaneselvans/)
 

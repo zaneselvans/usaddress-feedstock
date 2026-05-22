@@ -29,6 +29,9 @@ requirements:
 
 tests:
   - python:
+       python_version:
+         - ${{ python_min }}.*
+         - '*'
       imports:
         - usaddress
       pip_check: true

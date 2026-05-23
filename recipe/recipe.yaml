@@ -20,7 +20,6 @@ build:
     - test -f usaddress/usaddr.crfsuite
     - cp usaddress/usaddr.crfsuite $SP_DIR/usaddress/usaddr.crfsuit
 
-
 requirements:
   host:
     - python ${{ python_min }}.*
@@ -28,6 +27,7 @@ requirements:
     - setuptools
     - parserator
     - python-crfsuite >=0.7
+    - probableparsing
   run:
     - python >=${{ python_min }}
     - python-crfsuite >=0.7

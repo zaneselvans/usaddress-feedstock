@@ -14,7 +14,12 @@ source:
 build:
   number: 1
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    - parserator train training/labeled.xml usaddress
+    - test -f usaddress/usaddr.crfsuite
+    - cp usaddress/usaddr.crfsuite $SP_DIR/usaddress/usaddr.crfsuit
+
 
 requirements:
   host:

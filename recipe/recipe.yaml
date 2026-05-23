@@ -12,7 +12,7 @@ source:
   sha256: "f7e614e2489c159cf85be1b6f86edbfaf329dbeedef4d002a025757afd1ec6c6"
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -22,6 +22,7 @@ requirements:
     - pip
     - setuptools
     - parserator
+    - python-crfsuite >=0.7
   run:
     - python >=${{ python_min }}
     - python-crfsuite >=0.7
@@ -36,8 +37,7 @@ tests:
         - usaddress
       pip_check: true
   - script:
-      - python -c "import usaddress; result = usaddress.parse('123 Main St'); assert result, 'parse returned empty result'"
-
+      - python -c "import usaddress; result = usaddress.parse('123 Main St'); assert len(result) > 0, 'parse() returned empty result'"
 about:
   homepage: https://github.com/datamade/usaddress
   repository: https://github.com/datamade/usaddress
